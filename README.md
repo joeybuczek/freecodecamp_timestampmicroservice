@@ -12,9 +12,9 @@ User stories:
 
 Example usage:
 
-https://timestamp-ms.herokuapp.com/December%2015,%202015
+https://fcc-timestampmicroservice.herokuapp.com/December%2015,%202015
 
-https://timestamp-ms.herokuapp.com/1450137600
+https://fcc-timestampmicroservice.herokuapp.com/1450137600
 
 Example output:
 

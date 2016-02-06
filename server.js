@@ -26,7 +26,9 @@ var server = http.createServer(function (req, res) {
                "<p>" + 
                 "<a style='color:darkblue;text-decoration:none;' href='https://fcc-timestampmicroservice.herokuapp.com/1450137600'>" + 
                 "https://fcc-timestampmicroservice.herokuapp.com/1450137600</a>" + 
-               "</p>";
+               "</p>" +
+               "<h3>Example output:</h3>" +
+               "<p>{ 'unix': 1450137600, 'natural': 'December 15, 2015' }</p>";
     
     // format vars
     var naturalSearch = url.search(/[a-z]\%20[0-9]+\,?\%20[0-9]+/i);
