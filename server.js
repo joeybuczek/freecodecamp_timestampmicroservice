@@ -19,8 +19,14 @@ var server = http.createServer(function (req, res) {
     var html = "<h2>Timestamp MicroService - Free Code Camp Challenge</h2>" + 
                "<p>Append a unix or natural date to the above URL to see either both results for the same date.</p>" + 
                "<h3>Example usage:</h3>" + 
-               "<p style='color:darkblue;'>https://fcc-timestampmicroservice.herokuapp.com/December%2015,%202015</p>" + 
-               "<p style='color:darkblue;'>https://fcc-timestampmicroservice.herokuapp.com/1450137600</p>";
+               "<p>" + 
+                "<a style='color:darkblue;text-decoration:none;' href='https://fcc-timestampmicroservice.herokuapp.com/December%2015,%202015'>" +
+                "https://fcc-timestampmicroservice.herokuapp.com/December%2015,%202015</a>" +
+               "</p>" + 
+               "<p>" + 
+                "<a style='color:darkblue;text-decoration:none;' href='https://fcc-timestampmicroservice.herokuapp.com/1450137600'>" + 
+                "https://fcc-timestampmicroservice.herokuapp.com/1450137600</a>" + 
+               "</p>";
     
     // format vars
     var naturalSearch = url.search(/[a-z]\%20[0-9]+\,?\%20[0-9]+/i);
@@ -56,10 +62,11 @@ var server = http.createServer(function (req, res) {
     } else if ((unixSearch >= 0) && (letterSearch < 0)) {
         
         // unix found, set result
-        result = { 'unix': url, 'natural': createNaturalDate(Number(url)*1000) };    
+        result = { 'unix': Number(url), 'natural': createNaturalDate(Number(url)*1000) };    
         
     } else {
         
+        // invalid, return null
         result = resultObject;
         
     }
